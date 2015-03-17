@@ -48,26 +48,36 @@
 }
 
 -(void) lastEyes {
-    self.eyesImgName = [NSString stringWithFormat:@"eyes_%d.jpg",--startingEyes];
-    if (startingEyes == 0) {
+    startingEyes--;
+    
+    if (startingEyes < 1) {
         startingEyes = 5;
     }
+    
+    self.eyesImgName = [NSString stringWithFormat:@"eyes_%d.jpg",startingEyes];
 }
 
 -(void) lastMouth {
-    self.mouthImgName = [NSString stringWithFormat:@"mouth_%d.jpg", --startingMouth];
-    if (startingMouth == 0) {
+    startingMouth--;
+    
+    if (startingMouth < 1) {
         startingMouth = 5;
     }
+    
+    self.mouthImgName = [NSString stringWithFormat:@"mouth_%d.jpg", startingMouth];
+   
+    
     
 }
 
 -(void) lastNose {
-    self.noseImgName = [NSString stringWithFormat:@"nose_%d.jpg", --startingNose];
-    if (startingNose == 0) {
+    startingNose--;
+    
+    if (startingNose < 1) {
         startingNose = 5;
     }
     
+    self.noseImgName = [NSString stringWithFormat:@"nose_%d.jpg", startingNose];
 }
 
 -(void) nextEyes {
@@ -81,18 +91,24 @@
 }
 
 -(void) nextMouth {
-    self.mouthImgName = [NSString stringWithFormat:@"mouth_%d.jpg", ++startingMouth];
-    if (startingMouth == 6) {
+    startingMouth++;
+    
+    if (startingMouth > 5) {
         startingMouth = 1;
     }
+    self.mouthImgName = [NSString stringWithFormat:@"mouth_%d.jpg", startingMouth];
     
 }
 
 -(void) nextNose {
-    self.noseImgName = [NSString stringWithFormat:@"nose_%d.jpg", ++startingNose];
-    if (startingNose == 6) {
+    startingNose++;
+    
+    if (startingNose > 5) {
         startingNose = 1;
     }
+    
+    self.noseImgName = [NSString stringWithFormat:@"nose_%d.jpg", startingNose];
+
     
 }
 @end
